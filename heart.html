@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Emoji Converter</title>
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+	<link rel="stylesheet" href="./css/styles.css">
+	<style>
+		.container{
+			padding-top: 100px;
+		}
+		.navbar{
+			box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+		}
+		.tagline {
+			font-size: 24px;
+			margin-bottom: 20px;
+			color: white; /* Add this line to set the color to white */
+		}
+		
+		
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0;
+		}
+		#emoji {
+			width: 200px;
+			height: 200px;
+			margin-bottom: 20px;
+		}
+		.tagline {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+		button {
+			padding: 10px 20px;
+			font-size: 18px;
+			cursor: pointer;
+		}
+		button:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+	</style>
+</head>
+<body>
+	
+	<nav class="navbar is-light is-fixed-top" role="navigation" aria-label="main navigation">
+		<div class="navbar-brand">
+			<a class="navbar-item" href="https://bulma.io">
+				<strong style="color:#000; font-weight: 900;">🥹🥹🥹</strong>
+			</a>
+
+			<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+			</a>
+		</div>
+
+		<div id="navbarBasicExample" class="navbar-menu">
+			<div class="navbar-start">
+				<a href="index.html" class="navbar-item">
+					Home
+				</a>
+
+				<a href="flower.html" class="navbar-item">
+					Flower
+				</a>
+
+				<div class="navbar-item has-dropdown is-hoverable">
+					<a class="navbar-link">
+						More
+					</a>
+
+					<div class="navbar-dropdown">
+						<a href="sorry.html" class="navbar-item">
+							Letter
+						</a>
+						<a href="heart.html" class="navbar-item">
+							Accept
+						</a>
+						
+						<hr class="navbar-divider">
+						<a class="navbar-item">
+							Report an issue
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="navbar-end">
+				<div class="navbar-item">
+					<div class="buttons">
+						<a class="button is-black">
+							Log out
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+
+<img id="emoji" src="img/crying.gif" alt="Crying Emoji">
+
+<p class="tagline">Accepted the apology?</p>
+
+<button onclick="acceptApology(true)">Yes</button>
+<button onclick="acceptApology(false)" disabled>No</button>
+
+<script>
+function acceptApology(accepted) {
+    var emoji = document.getElementById("emoji");
+    if (accepted) {
+        emoji.src = "img/smiling2.gif";
+        emoji.alt = "smiling2 Emoji";
+    } else {
+        emoji.src = "img/crying.gif";
+        emoji.alt = "Crying Emoji";
+    }
+    document.querySelector("button[onclick='acceptApology(true)']").disabled = true;
+    document.querySelector("button[onclick='acceptApology(false)']").disabled = true;
+}
+</script>
+
+</body>
+</html>
